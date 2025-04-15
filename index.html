@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code for Noting</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: background 0.5s ease;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    #content {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    Code for Noting
+  </div>
+
+  <script>
+    function getRandomColor() {
+      const r = Math.floor(Math.random() * 156 + 100); // softer colors
+      const g = Math.floor(Math.random() * 156 + 100);
+      const b = Math.floor(Math.random() * 156 + 100);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function setGradientBackground() {
+      const color1 = getRandomColor();
+      const color2 = getRandomColor();
+      const color3 = getRandomColor();
+      document.body.style.background = `linear-gradient(135deg, ${color1}, ${color2}, ${color3})`;
+    }
+
+    setGradientBackground();
+    setInterval(setGradientBackground, 4000); // Change every 4 seconds
+  </script>
+</body>
+</html>
